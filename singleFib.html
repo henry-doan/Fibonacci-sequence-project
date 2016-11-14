@@ -1,0 +1,36 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Fibonacci</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function inputFib() {
+			var input = document.getElementById("fibInput").value;
+
+			fibMath(input);
+		}
+
+		function fibMath(input) {
+			var result;
+			var answer = Math.floor((Math.pow( 1 + Math.sqrt(5), input) - Math.pow( 1 - Math.sqrt(5), input))/ (Math.pow(2, input) * Math.sqrt(5)));
+			result = document.getElementById("output");
+			result.innerHTML = answer;
+		}
+
+	</script>
+		<nav>
+		  <ul>
+		    <li><a href="index.html">Home</a></li>
+		    <li><a href="singleFib.html">Single Fib</a></li>
+		    <li><a href="#">Links</a></li>
+		  </ul>
+		</nav>
+		<h2>Fibonacci Single Result</h2>
+		<h3>Enter a number to begin the sequence:</h3>
+		<input type="text" id="fibInput"/>
+		<button onclick="inputFib()">Print</button>
+
+		<h4>Results: <span id="output"></span></h4>
+</body>
+</html>
