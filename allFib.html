@@ -1,0 +1,56 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Fibonacci</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function inputFib() {
+			var input = document.getElementById("fibInput").value;
+
+			fibCalulation(input);
+		}
+
+
+		function fibCalulation(input){
+			var num_one = 0;
+			var num_two = 1; 
+			var next_num;
+			var result;
+
+			if(input != '') {
+				result = document.getElementById("output");
+				result.innerHTML = "";
+				result.innerHTML = "<br/>";
+				result.innerHTML += num_one + "<br/>";
+				result.innerHTML += num_two + "<br/>";
+
+				while(input > 2) {
+					next_num = num_one + num_two;
+					num_one = num_two;
+					num_two = next_num;
+					result.innerHTML += next_num + "<br/>";
+
+					input--;
+				}
+			} else {
+				document.getElementById("result").innerHTML = "Please enter a vaild number"
+			}
+		}
+
+	</script>
+		<nav>
+		  <ul>
+		    <li><a href="index.html">Home</a></li>
+		    <li><a href="singleFib.html">Single Fib</a></li>
+		    <li><a href="allFib.html">All Fib</a></li>
+		  </ul>
+		</nav>
+		<h2>Fibonacci All Result</h2>
+		<h3>Enter a number to begin the sequence:</h3>
+		<input type="text" id="fibInput"/>
+		<button onclick="inputFib()">Print</button>
+
+		<h4>Results: <span id="output"></span></h4>
+</body>
+</html>
